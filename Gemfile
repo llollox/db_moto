@@ -44,6 +44,8 @@ gem 'font-awesome-rails'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'therubyracer', :platforms => :ruby
+
 gem 'activeresource', '~>4.0.0'
 
 group :development, :test do
