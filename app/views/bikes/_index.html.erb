@@ -15,7 +15,7 @@
     <% if bike.pictures.first %>
       <div class="card-img" 
            style="background-color:#eaeaea !important;
-                  background-image:url(<%= bike.pictures.first.photo.url %>)">
+                  background-image:url(<%= URI.join(request.url, bike.pictures.first.photo.url) %>)">
       </div>
     <% else %>
       <div class="card-img" 

@@ -10,9 +10,9 @@
 			<% group.each do |picture| %>
 			
 				<div class="col-sm-<%= 12/slice_num %>">
-					<%= link_to image_tag(picture.photo.url(:small), 
-								:alt => picture.photo_file_name, :class => 	"img-thumbnail"),
-							picture.photo.url %>
+					<%= link_to image_tag(
+						getUrl(picture.photo.url(:small)), :class => "img-thumbnail"), 
+						getUrl(picture.photo.url) %>
 				</div>
 
 			<% end %>

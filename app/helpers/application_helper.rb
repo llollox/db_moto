@@ -15,5 +15,9 @@ module ApplicationHelper
     return _("Modelli").to_s if controller_name.classify.downcase == "model"
     return _("Moto").to_s if controller_name.classify.downcase == "bike"
   end
+
+  def getUrl url
+    (URI(request.url) + url).to_s
+  end
   
 end
