@@ -1,0 +1,22 @@
+<%= render "forms/title" %>
+
+  <%= simple_nested_form_for(object, html: { class: 'form-horizontal' }) do |f| %>
+
+  <%= f.error_notification %> 
+  
+  <%= render "form", :f => f %>
+  	
+  	<!-- If this model has an association has_many with pictures
+		than show pictures form to manage them --> 
+
+  	<%# if object.class.reflect_on_all_associations(:has_many).
+  							any?{|association| association.name.to_s == "pictures"} %>
+  	<%= render "pictures/form", :f => f if controller_name != "models"%>
+  	<%# end %>
+  
+  <br/>    
+  <%= render "forms/create_or_edit_buttons", :f => f %>
+
+<% end %>
+
+<br/><br/>

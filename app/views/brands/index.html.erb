@@ -1,0 +1,42 @@
+<br/>
+<center>
+  <h2><%= _("Database delle Moto") %></h2>
+  <br/>
+  <%= alphabetical_paginate @alphaParams %>
+</center>
+
+<%= link_to command_label('fa fa-plus',_("Nuovo Marchio")), new_brand_path, 
+    :class=> "btn btn-success" if current_user %>
+<br/><br/>
+
+<legend><%= _("Lista dei marchi")%></legend>
+ <div id="pagination_table">
+  <table class="table table-striped">
+    <tr>
+      <th>#</th>
+      <th>Logo</th>
+      <th>Nome</th>
+      <th>Modelli</th>
+      <% if current_user %>
+        <th></th>
+        <th></th>
+      <% end %>
+    </tr>
+
+    <% @brands.each_with_index do |brand,index| %>
+    <tr>
+      <td><%= index+1 %></td>
+      <td><%= image_tag(brand.logo.url(:thumb)) %></td>
+      <td><%= link_to brand.name, brand %></td>
+      <td><%= brand.models.size %></td>
+      <% if current_user %>
+        <td><%= link_to command_label('fa fa-edit',_("Modifica")), edit_brand_path(brand), 
+        :class => "btn btn-primary" %></td>
+        <td><%= link_to command_label('fa fa-trash-o',_("Cancella")), brand, method: :delete, 
+        data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+      <% end %>
+    </tr>
+    <% end %>
+    
+  </table>
+</div> 

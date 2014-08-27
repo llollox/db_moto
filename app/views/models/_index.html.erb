@@ -1,0 +1,45 @@
+<legend><%= _("Lista dei modelli")%></legend>
+
+<%= link_to command_label('fa fa-plus',_("Nuovo Modello")), new_brand_model_path(@brand), 
+  :class=> "btn btn-success" if current_user %>
+
+<br/><br/>
+
+<% if @models && @models.size > 0 %>
+
+<table class="table table-striped">
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Allestimenti</th>
+    <% if current_user %>
+      <th></th>
+      <th></th>
+    <% end %>
+  </tr>
+
+<% @models.each_with_index do |model,index| %>
+  <tr>
+    <td><%= index+1 %></td>
+    <td><%= link_to model.name, model %></td>
+    <td><%= model.bikes.size %></td>
+    <% if current_user %>
+      <td><%= link_to command_label('fa fa-edit',_("Modifica")), 
+                ["edit",model], :class => "btn btn-primary" %></td>
+      <td><%= link_to command_label('fa fa-trash-o',_("Cancella")), model, 
+                method: :delete, :class => "btn btn-danger",
+                data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<% else %>
+  <br/>
+  <p class="muted" style="font-size:16px;">
+    <i><%= _("Nessun risultato trovato!") %></i>
+  </p>
+  <br/>
+<% end %>
+
+<center><%= will_paginate @models, renderer: BootstrapPagination::Rails %></center>

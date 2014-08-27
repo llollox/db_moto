@@ -1,0 +1,21 @@
+<br/>
+<%= link_to command_label('fa fa-chevron-left',_("Indietro")), :back, :class => "btn btn-default" %>
+<br/>
+<center>
+
+	<% if action_name == "new" || action_name == "create" %>
+
+		<% if %w(bikes).include? controller_name %>  
+			<h2><%= _("Nuova ") + model_translated %></h2>
+		<% else %>      
+			<h2><%= _("Nuovo ") + model_translated %></h2>
+		<% end %>
+
+	<% else %>
+
+		<h2><%= _("Modifica ") + model_translated %></h2>
+
+	<% end %>
+  
+</center>
+<hr/>

@@ -1,0 +1,25 @@
+<legend><%= _("Immagini")%></legend>
+
+<div class="container-fluid">
+  <%= f.simple_fields_for :pictures do |picture_form| %> 
+
+      <% if picture_form.object.photo? #photo exists -> show photo %>
+        <div class="picture-card">
+          <%= image_tag picture_form.object.photo.url(:small) %>
+          <br/>
+          <%= picture_form.link_to_remove command_label('fa fa-trash-o','Cancella'), :class => "close", :style => "float:none;" %>
+        </div>
+      <% else #photo not exist -> form to add a new photo %>
+        <br/>
+        <%= picture_form.file_field :photo, :style => "display: inline-block" %>
+        <%= picture_form.link_to_remove command_label('icon-trash',
+            _("Cancella")), :class => "btn btn-danger", 
+            :style => "margin-left:10px;margin-bottom:5px;" %>
+      <% end %>
+  <% end %>
+
+  <div style="clear:both"></div>
+  
+  <%= f.link_to_add command_label('fa fa-plus',_("Aggiungi Immagine")), :pictures, 
+      :class=> "btn btn-success", :style => "margin-top:20px;" %>
+</div>

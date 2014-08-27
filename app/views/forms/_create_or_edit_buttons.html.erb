@@ -1,0 +1,7 @@
+<div class="col-sm-10 col-sm-offset-2">
+<% if action_name == "edit" || action_name == "update" %>
+	<%= f.button :submit, _("Modifica #{model_translated}"), :class=> "btn btn-primary btn-lg" %>
+<% else %>
+	<%= f.button :submit, _("Crea #{model_translated}"), :class=> "btn btn-success btn-lg" %>
+<% end %>
+</div>

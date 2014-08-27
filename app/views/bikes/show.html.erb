@@ -1,0 +1,28 @@
+<br/>
+
+<center>
+	<%= image_tag(@bike.brand.logo.url(:thumb)) if @bike.brand.logo.exists? %>
+	<h2><%= @bike.brand.name + " " + @bike.equipment_name %></h2>
+	<br/>
+	<%= render "layouts/edit_destroy_buttons", :item => @bike if current_user %>
+</center>
+<br/>
+<%= render "layouts/breadcrumb" %>
+
+<br/>
+
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<%= render 'bikes/fields' %>
+
+		<br/>
+
+		<% if @bike.pictures.first %>
+			<%= render "pictures/photoswipe_carousel", :pictures => @bike.pictures %>
+		<% end %>
+
+	</div>
+</div>
+
+<br/><br/>
+<br/><br/>

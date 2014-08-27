@@ -1,0 +1,14 @@
+<div id="loadingModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="loadingModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="loadingModalLabel">Caricamento</h3>
+  </div>
+  <div class="modal-body">
+    <center>
+    <%= image_tag "loading.gif", :style => "margin:10px;margin-right:25px;" %>
+    <span>Si prega di attendere! Caricamento in corso...</span>
+    </center>
+  </div>
+  <!-- Overlay to DISABLE ALL CLICKS during loading -->
+  <div class="overlay"></div>
+</div>

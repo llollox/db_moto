@@ -1,0 +1,49 @@
+<%= link_to command_label('fa fa-plus', _("Crea Moto") ), 
+				new_brand_model_bike_path(@model.brand, @model), 
+        :class=> "btn btn-success" if current_user %>
+<br/>
+<br/>
+
+<% if @model.bikes && @model.bikes.size > 0 %>
+<div class="cards-container">
+
+  <% @model.bikes.each do |bike| %>
+
+  <a href="<%= bike_path(bike) %>">
+  <div class="card">
+
+    <% if bike.pictures.first %>
+      <div class="card-img" 
+           style="background-color:#eaeaea !important;
+                  background-image:url(<%= bike.pictures.first.photo.url %>)">
+      </div>
+    <% else %>
+      <div class="card-img" 
+        style="background-color:#eaeaea !important;
+               background-image:url(<%= image_path("missing_medium.png") %>);">
+      </div>
+    <% end %>
+    
+    <hr class="card-top-separator"/>
+
+    <div class="card-content">
+      
+      <% title = bike.equipment_name if %w(Bike).include? bike.class.name %>
+      
+      <p class="card-title"><%= link_to title, bike %></p>
+
+      <h2><%= bike.category.name %></h2>
+
+    </div>
+
+  </div>
+  </a>
+  <% end %>
+</div>
+<div style="clear:both"></div>
+
+<% else %>
+<p class="muted text_big">
+  <i><%= _("Nessun risultato trovato!") %></i>
+</p>
+<% end %>

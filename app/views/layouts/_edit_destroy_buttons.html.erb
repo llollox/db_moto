@@ -1,0 +1,6 @@
+<%= link_to command_label('fa fa-edit', "Modifica"), 
+  ["edit",item], :class=> "btn btn-primary" %>
+
+<%= link_to command_label('fa fa-trash-o', "Cancella"), 
+    item, method: :delete, data: { confirm: 'Are you sure?' }, 
+    :class => "btn btn-danger" %>

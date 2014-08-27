@@ -1,0 +1,4 @@
+<option value=""><%= _("Seleziona l'allestimento") %></option>
+<% @bikes.each do |bike| %>
+	<option value="<%= bike.id %>"><%= bike.equipment_name %></option>
+<% end %>

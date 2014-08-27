@@ -1,0 +1,155 @@
+<div class="row" style="font-size:15px">
+  <div class="col-md-6">
+
+    <legend style="width:80%;"><%= _("Informazioni") %></legend>
+
+    <p>
+      <b><%=  _("Marca") %>:</b>
+      <%= @bike.brand.name %>
+    </p>
+
+    <p>
+      <b><%=  _("Modello") %>:</b>
+      <%= @bike.model.name %>
+    </p>
+
+    <% if @bike.category %>
+    <p>
+      <b><%=  _("Categoria") %>:</b>
+      <%= @bike.category.name %>
+    </p>
+    <% end %>
+
+    <% if @bike.price %>
+    <p>
+      <b><%=  _("Prezzo") %>:</b>
+      <%= @bike.price %> €
+    </p>
+    <% end %>
+
+    <% if @bike.brakes || @bike.brake_measures || @bike.wheel_measures ||
+      @bike.seat_height %>
+
+      <legend style="width:80%;"><%= _("Ciclistica") %></legend>
+
+      <% if @bike.brakes %>
+      <p>
+        <b><%=  _("Freni") %>:</b>
+        <%= @bike.brakes %>
+      </p>
+      <% end %>
+
+      <% if @bike.brake_measures %>
+      <p>
+        <b><%=  _("Misure Dischi") %>:</b>
+        <%= @bike.brake_measures %>
+      </p>
+      <% end %>
+
+      <% if @bike.wheel_measures %>
+      <p>
+        <b><%=  _("Misure Cerchi") %>:</b>
+        <%= @bike.wheel_measures %>
+      </p>
+      <% end %>
+
+      <% if @bike.seat_height %>
+      <p>
+        <b><%=  _("Altezza Sella") %>:</b>
+        <%= @bike.seat_height %>
+      </p>
+      <% end %>
+
+    <% end %>
+
+  </div>
+
+  <div class="col-md-6">
+
+    <% if @bike.stroke || @bike.displacement || @bike.cylinders ||
+      @bike.cooling_system || @bike.power || @bike.torque ||
+      @bike.anti_pollution_legislation %>
+
+      <legend style="width:80%;"><%= _("Motore") %></legend>
+
+      <% if @bike.stroke %>
+      <p>
+        <b><%=  _("Tempi") %>:</b>
+        <%= @bike.stroke %>T
+      </p>
+      <% end %>
+
+      <% if @bike.displacement %>
+      <p>
+        <b><%=  _("Cilindrata") %>:</b>
+        <%= @bike.displacement %>
+      </p>
+      <% end %>
+
+      <% if @bike.anti_pollution_legislation %>
+      <p>
+        <b><%=  _("Norm. Antinquinamento") %>:</b>
+        <%= @bike.anti_pollution_legislation %>
+      </p>
+      <% end %>
+
+      <% if @bike.cylinders %>
+      <p>
+        <b><%=  _("Cilindri") %>:</b>
+        <%= @bike.cylinders %>
+      </p>
+      <% end %>
+
+      <% if @bike.cooling_system %>
+      <p>
+        <b><%=  _("Raffreddamento") %>:</b>
+        <%= @bike.cooling_system %>
+      </p>
+      <% end %>
+
+      <% if @bike.power %>
+      <p>
+        <b><%=  _("Potenza") %>:</b>
+        <%= @bike.power %>
+      </p>
+      <% end %>
+
+      <% if @bike.torque %>
+      <p>
+        <b><%=  _("Coppia") %>:</b>
+        <%= @bike.torque %>
+      </p>
+      <% end %>
+
+    <% end %>
+
+    <% if @bike.weight || @bike.length || @bike.fuel_capacity%>
+
+    <legend style="width:80%;"><%= _("Dimensioni") %></legend>
+
+    <% if @bike.length %>
+    <p>
+      <b><%=  _("Lunghezza") %>:</b>
+      <%= @bike.length %>
+    </p>
+    <% end %>
+
+    <% if @bike.weight %>
+    <p>
+      <b><%=  _("Peso") %>:</b>
+      <%= @bike.weight %>
+    </p>
+    <% end %>
+
+    <% if @bike.fuel_capacity %>
+    <p>
+      <b><%=  _("Capcità Serbatoio") %>:</b>
+      <%= @bike.fuel_capacity %>
+    </p>
+    <% end %>
+
+    <% end %>
+
+  </div>
+</div>
+

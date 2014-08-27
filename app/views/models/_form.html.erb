@@ -1,0 +1,5 @@
+<%= f.input :brand_id, collection: Brand.alphabetically, 
+    						:label => _("Marchio"), :placeholder => _("Marchio"), 
+    						:include_blank => _("Seleziona il marchio ") %>
+
+<%= f.input :name, :label => _("Nome Modello"), :placeholder => _("Nome Modello") %>

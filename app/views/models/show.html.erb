@@ -1,0 +1,12 @@
+<br/>
+<center>
+  <%= image_tag(@model.brand.logo.url(:thumb)) if @model.brand.logo.exists? %>
+  <h2><%= @model.brand.name + " " + @model.name %></h2>
+	<br/>
+	<%= render "layouts/edit_destroy_buttons", :item => @model if current_user %>
+</center>
+<br/><br/>
+<%= render 'layouts/breadcrumb' %>
+<br/>
+<%= render "bikes/index" %>
+  

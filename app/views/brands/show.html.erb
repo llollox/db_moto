@@ -1,0 +1,19 @@
+<br/>
+
+<center>
+	<% if @brand.logo.exists? %>
+	<%= image_tag(@brand.logo.url(:small)) %>
+	<% else %>
+	<h2><%= @brand.name %></h2>
+	<% end %>
+	<br/><br/>
+<%= render "layouts/edit_destroy_buttons", :item => @brand if current_user %>
+</center>
+
+
+<br/>
+
+<%= render 'layouts/breadcrumb' %>
+
+<%= render 'models/index' %>
+

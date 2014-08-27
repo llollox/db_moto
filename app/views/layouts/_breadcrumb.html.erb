@@ -1,0 +1,18 @@
+<ul class="breadcrumb">
+	<li><%= link_to _("Marchi"), brands_path %></li>
+
+  <% if controller_name == "brands" %>
+  	<!-- <li><%#= link_to _("Marchi"), brands_path %> <span class="divider">/</span></li> -->
+  	<li class="active"><%= @brand.name %></li>
+  
+  <% elsif controller_name == "models" %>
+  	<li><%= link_to @model.brand.name, @model.brand %></li>
+  	<li class="active"><%= @model.name %></li>
+  
+  <% elsif controller_name == "bikes" %>
+  	<!-- <li><%#= link_to _("Marchi"), brands_path %> <span class="divider">/</span></li> -->
+  	<li><%= link_to @bike.model.brand.name, @bike.model.brand %></li>
+  	<li><%= link_to @bike.model.name, @bike.model %></li>
+  	<li class="active"><%= @bike.equipment_name %></li>
+  <% end %>
+</ul>

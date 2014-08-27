@@ -1,0 +1,295 @@
+GIT
+  remote: git://github.com/jetthoughts/yaml_db.git
+  revision: fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba
+  ref: fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba
+  specs:
+    yaml_db (0.2.3)
+
+GIT
+  remote: https://github.com/plataformatec/simple_form.git
+  revision: 29f8f768f1702c6d032854b870d14eadb81cea88
+  specs:
+    simple_form (3.1.0.rc2)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    actionmailer (4.1.5)
+      actionpack (= 4.1.5)
+      actionview (= 4.1.5)
+      mail (~> 2.5.4)
+    actionpack (4.1.5)
+      actionview (= 4.1.5)
+      activesupport (= 4.1.5)
+      rack (~> 1.5.2)
+      rack-test (~> 0.6.2)
+    actionview (4.1.5)
+      activesupport (= 4.1.5)
+      builder (~> 3.1)
+      erubis (~> 2.7.0)
+    activemodel (4.1.5)
+      activesupport (= 4.1.5)
+      builder (~> 3.1)
+    activerecord (4.1.5)
+      activemodel (= 4.1.5)
+      activesupport (= 4.1.5)
+      arel (~> 5.0.0)
+    activeresource (4.0.0)
+      activemodel (~> 4.0)
+      activesupport (~> 4.0)
+      rails-observers (~> 0.1.1)
+    activesupport (4.1.5)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
+    alphabetical_paginate (2.2.3)
+    arel (5.0.1.20140414130214)
+    authlogic (3.4.2)
+      activerecord (>= 3.2)
+      activesupport (>= 3.2)
+      request_store (~> 1.0)
+    autoprefixer-rails (3.0.0.20140821)
+      execjs
+    bcrypt (3.1.7)
+    bcrypt-ruby (3.1.5)
+      bcrypt (>= 3.1.3)
+    better_errors (1.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.2.0.1)
+      sass (~> 3.2)
+    builder (3.2.2)
+    callsite (0.0.11)
+    capistrano (3.2.1)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (~> 1.3)
+    capistrano-bundler (1.1.3)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2)
+    capistrano-rails (1.1.1)
+      capistrano (~> 3.1)
+      capistrano-bundler (~> 1.1)
+    capistrano3-nginx (2.0.2)
+      capistrano (>= 3.0.0)
+    chunky_png (1.3.1)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.4)
+      climate_control (>= 0.0.3, < 1.0)
+    coderay (1.1.0)
+    coffee-rails (4.0.1)
+      coffee-script (>= 2.2.0)
+      railties (>= 4.0.0, < 5.0)
+    coffee-script (2.3.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.7.1)
+    colorize (0.7.3)
+    compass (0.12.7)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.2.19)
+    compass-rails (2.0.0)
+      compass (>= 0.12.2)
+    debug_inspector (0.0.2)
+    erubis (2.7.0)
+    execjs (2.2.1)
+    fast_gettext (0.9.0)
+    ffi (1.9.3)
+    ffi-compiler (0.1.3)
+      ffi (>= 1.0.0)
+      rake
+    font-awesome-rails (4.1.0.0)
+      railties (>= 3.2, < 5.0)
+    fssm (0.2.10)
+    gettext (3.1.4)
+      locale (>= 2.0.5)
+      text
+    gettext_i18n_rails (1.1.0)
+      fast_gettext (>= 0.9.0)
+    hike (1.2.3)
+    i18n (0.6.11)
+    jbuilder (2.1.3)
+      activesupport (>= 3.0.0, < 5)
+      multi_json (~> 1.2)
+    jquery-rails (3.1.1)
+      railties (>= 3.0, < 5.0)
+      thor (>= 0.14, < 2.0)
+    jquery-turbolinks (2.0.2)
+      railties (>= 3.1.0)
+      turbolinks
+    json (1.8.1)
+    locale (2.1.0)
+    mail (2.5.4)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
+    meta_request (0.3.4)
+      callsite (~> 0.0, >= 0.0.11)
+      rack-contrib (~> 1.1)
+      railties (>= 3.0.0, < 5.0.0)
+    method_source (0.8.2)
+    mime-types (1.25.1)
+    mini_portile (0.6.0)
+    minitest (5.4.0)
+    multi_json (1.10.1)
+    nested_form (0.3.2)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.9.1)
+    nokogiri (1.6.3.1)
+      mini_portile (= 0.6.0)
+    paperclip (4.2.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
+    pg (0.17.1)
+    polyglot (0.3.5)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-doc (0.6.0)
+      pry (~> 0.9)
+      yard (~> 0.8)
+    rack (1.5.2)
+    rack-contrib (1.1.0)
+      rack (>= 0.9.1)
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    rails (4.1.5)
+      actionmailer (= 4.1.5)
+      actionpack (= 4.1.5)
+      actionview (= 4.1.5)
+      activemodel (= 4.1.5)
+      activerecord (= 4.1.5)
+      activesupport (= 4.1.5)
+      bundler (>= 1.3.0, < 2.0)
+      railties (= 4.1.5)
+      sprockets-rails (~> 2.0)
+    rails-observers (0.1.2)
+      activemodel (~> 4.0)
+    railties (4.1.5)
+      actionpack (= 4.1.5)
+      activesupport (= 4.1.5)
+      rake (>= 0.8.7)
+      thor (>= 0.18.1, < 2.0)
+    rake (10.3.2)
+    rdoc (4.1.1)
+      json (~> 1.4)
+    request_store (1.1.0)
+    rest-client (1.6.8)
+      mime-types (~> 1.16)
+      rdoc (>= 2.4.2)
+    rmagick (2.13.3)
+    sass (3.2.19)
+    sass-rails (4.0.3)
+      railties (>= 4.0.0, < 5.0)
+      sass (~> 3.2.0)
+      sprockets (~> 2.8, <= 2.11.0)
+      sprockets-rails (~> 2.0)
+    scrypt (1.2.1)
+      ffi-compiler (>= 0.0.2)
+      rake
+    sdoc (0.4.1)
+      json (~> 1.7, >= 1.7.7)
+      rdoc (~> 4.0)
+    sequel (3.20.0)
+    sinatra (1.0)
+      rack (>= 1.0)
+    slop (3.6.0)
+    spring (1.1.3)
+    sprockets (2.11.0)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+    sprockets-rails (2.1.3)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      sprockets (~> 2.8)
+    sqlite3 (1.3.9)
+    sshkit (1.5.1)
+      colorize
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
+    taps (0.3.24)
+      rack (>= 1.0.1)
+      rest-client (>= 1.4.0, < 1.7.0)
+      sequel (~> 3.20.0)
+      sinatra (~> 1.0.0)
+    text (1.3.0)
+    thor (0.19.1)
+    thread_safe (0.3.4)
+    tilt (1.4.1)
+    treetop (1.4.15)
+      polyglot
+      polyglot (>= 0.3.1)
+    turbolinks (2.3.0)
+      coffee-rails
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+    uglifier (2.5.3)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
+    will-paginate-i18n (0.1.15)
+    will_paginate (3.0.7)
+    will_paginate-bootstrap (1.0.1)
+      will_paginate (>= 3.0.3)
+    yard (0.8.7.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  activeresource (~> 4.0.0)
+  alphabetical_paginate
+  authlogic
+  autoprefixer-rails
+  bcrypt-ruby
+  better_errors (~> 1.1.0)
+  binding_of_caller
+  bootstrap-sass (~> 3.2.0)
+  capistrano (~> 3.1)
+  capistrano-bundler (~> 1.1.2)
+  capistrano-rails (~> 1.1)
+  capistrano3-nginx (~> 2.0)
+  coffee-rails (~> 4.0.0)
+  compass-rails
+  fast_gettext
+  font-awesome-rails
+  gettext (>= 3.0.2)
+  gettext_i18n_rails
+  jbuilder (~> 2.0)
+  jquery-rails
+  jquery-turbolinks
+  json
+  meta_request
+  nested_form
+  nokogiri
+  paperclip (~> 4.1)
+  pg
+  pry
+  pry-doc
+  rails (= 4.1.5)
+  rmagick
+  sass-rails (~> 4.0.3)
+  scrypt
+  sdoc (~> 0.4.0)
+  simple_form!
+  spring
+  sqlite3
+  taps
+  turbolinks
+  uglifier (>= 1.3.0)
+  will-paginate-i18n
+  will_paginate
+  will_paginate-bootstrap
+  yaml_db!

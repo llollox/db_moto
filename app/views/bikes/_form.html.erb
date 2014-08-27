@@ -1,0 +1,68 @@
+<%= f.input :brand_id, collection: Brand.alphabetically, 
+				:include_blank => _("Seleziona il marchio"),
+				:label => _("Marchio"), :input_html=> {:class => "brand"} %>
+
+<%= f.input :model_id, collection: @models, 
+		:include_blank => _("Seleziona il modello"),
+		:label => _("Modello"), :input_html=> {:class => "model" } %>
+
+<%= f.input :equipment_name, :label => _("Nome Allestimento"), 
+	:placeholder => _("Nome Allestimento"), :hint => _("es. RSV4 Factory (2009 - 12)") %>
+
+<%= f.input :category_id, :label => _("Categoria"), :collection => Category.all,
+:include_blank => _("Seleziona una categoria") %>
+
+<%= f.input :anti_pollution_legislation, :label => _("Norm. Antinquinamento"), 
+:collection => Bike.anti_pollution_legislation,
+:include_blank => _("Seleziona la normativa") %>
+
+<%= f.input :price, :label => _("Prezzo") do %>
+  <div class="input-append">
+  	<%= f.input_field :price, :placeholder => _("Prezzo")  %><span class="add-on">€</span>
+	</div>
+<% end %>
+
+<legend><%= _("Motore") %></legend>
+
+<%= f.input :stroke, :label => _("Tempi"), :collection => Bike.strokes,
+:include_blank => _("Seleziona i tempi motore") %>
+
+<%= f.input :displacement, :label => _("Cilindrata") do %>
+  <div class="input-append">
+  	<%= f.input_field :displacement, 
+  			:placeholder => _("Cilindrata") %><span class="add-on">cc</span>
+	</div>
+<% end %>
+
+<%= f.input :cylinders, :label => _("Cilindri"), :placeholder => _("Cilindri") %>
+
+<%= f.input :cooling_system, :label => _("Raffreddamento"), :placeholder => _("Raffreddamento") %>
+
+<%= f.input :power, :label => _("Potenza"), :placeholder => _("Potenza") %>
+
+<%= f.input :torque, :label => _("Coppia"), :placeholder => _("Coppia") %>
+
+<legend><%= _("Ciclistica") %></legend>
+
+<%= f.input :brakes, :label => _("Freni"), :collection => Bike.brakes,
+:include_blank => _("Seleziona la tipologia di freni") %>
+
+<%= f.input :brake_measures, :label => _("Misure Dischi"), :placeholder => _("Misure Dischi") %>
+
+<%= f.input :wheel_measures, :label => _("Misure Cerchi"), :placeholder => _("Misure Cerchi") %>
+
+<%= f.input :weight, :label => _("Peso"), :placeholder => _("Peso") %>
+
+<%= f.input :length, :label => _("Lunghezza"), :placeholder => _("Lunghezza") %>
+
+<%= f.input :seat_height, :label => _("Altezza Sella"), :placeholder => _("Altezza Sella") %>
+
+<%= f.input :fuel_capacity, :label => _("Capacità Serbatoio"), :placeholder => _("Capacità Serbatoio") %>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("select.brand").change(function(){
+			fetch_models(this);
+		});
+	});
+</script>
