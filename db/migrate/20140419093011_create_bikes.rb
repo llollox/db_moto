@@ -19,7 +19,7 @@ class CreateBikes < ActiveRecord::Migration
     	t.string :fuel_capacity
       t.string :price
       t.string :motoit_code
-      t.string :equipment_name
+      t.string :name
       t.integer :category_id
       t.timestamps
     end
