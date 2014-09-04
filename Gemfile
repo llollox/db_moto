@@ -90,3 +90,5 @@ gem 'json'
 gem 'fast_gettext'
 gem 'gettext', '>=3.0.2', :require => false, :group => :development
 gem 'gettext_i18n_rails'
+
+gem "paperclip-dropbox", ">= 1.1.7"

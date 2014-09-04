@@ -1,14 +1,18 @@
-class Picture < ActiveRecord::Base
+class DbMotoPicture < ActiveRecord::Base
   # attr_accessible :photo, :title
-	belongs_to :picturable, polymorphic: true
+  belongs_to :picturable, polymorphic: true
+  
 
   has_attached_file :photo, 
+  # :storage => :dropbox,
+  # :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
+  # :path => "db_moto_pictures/:style/:id_:filename",
 
   :styles => lambda { |a|
    if a.instance.is_pdf?
-     { :thumb => ["100x100>", :jpg], :small => ["250x250>", :jpg], :original => ["600x600>", :jpg]}
+     { :thumb => ["100x100>", :jpg], :original => ["600x400>", :jpg]}
    else
-     { :thumb => ["100x100>"], :small => ["250x250>"], :original => ["600x600>"]}
+     { :thumb => ["100x100>"], :original => ["600x400>"]}
    end
   },
     
@@ -20,7 +24,7 @@ class Picture < ActiveRecord::Base
    end
   },
 
-  :convert_options => { :all => '-density 300 -quality 100' } 
+  :convert_options => { :all => '-density 300 -quality 100' }
 
   # :default_url => ActionController::Base.helpers.asset_path('missing_:style.png')
      
@@ -30,5 +34,4 @@ class Picture < ActiveRecord::Base
   def is_pdf?
      ["application/pdf"].include?(self.photo_content_type) 
   end
-
 end

@@ -24,7 +24,7 @@ namespace :bikes do
   end  
 
   desc "Fetch bikes from www.moto.it"
-  task :fetch => [:fetch_basic_information, :fetch_details, :fetch_images]
+  task :fetch => [:fetch_basic_information, :fetch_details, :fetch_pictures]
 
   desc "Add new bikes fetching their name and motoit_code"
   task :fetch_basic_information => :environment do
@@ -190,8 +190,8 @@ namespace :bikes do
 	end
 
   desc "Fetch an image for all bike with a motoit_code"
-  task :fetch_images => :environment do
-  	puts "\n******** BIKES:FETCH_IMAGES ********\n\n"
+  task :fetch_pictures => :environment do
+  	puts "\n******** BIKES:FETCH_PICTURES ********\n\n"
   	counter = 1
 
   	Brand.all.each_with_index do |brand, brand_index|
@@ -201,7 +201,7 @@ namespace :bikes do
 	    brand.models.each do |model|
 	      model.bikes.each_with_index do |bike, index|
 
-	        if bike.pictures.empty? && 
+	        if bike.pictures.blank? && 
 	        		(bike.motoit_code && bike.motoit_code != "")
 	          
 	          # If this bike hasn't any pictures yet!
@@ -212,13 +212,13 @@ namespace :bikes do
 
 	          picture_url = "http://www2.moto.it/imagesmoto/#{brand_converted}/#{bike.motoit_code}.jpg"
 
-            puts "Bike [" + counter.to_s + "] " + brand.name + " : " + bike.equipment_name
-	          new_picture = Picture.new
-	          new_picture.picturable = bike
-            new_picture.photo = getPicture(picture_url)
-            new_picture.save
-            
+            picture = DbMotoPicture.new            
+            picture.photo = getPicture(picture_url)
+            picture.picturable = bike
+            picture.save
 
+            puts "Bike [" + counter.to_s + "] " + brand.name + " : " + bike.equipment_name
+	          
 	          counter = counter + 1
 	        end
 	      end

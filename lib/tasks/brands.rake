@@ -50,7 +50,7 @@ namespace :brands do
 
     Brand.all.each_with_index do |brand,index|
 
-      next if brand.logo.exists?
+      next if !brand.logo.blank?
 
       logo_page_url = "http://www.moto.it/listino/" + 
                           brandModelCoded(brand.name) + "/index.html?soloalistino=0"
@@ -67,7 +67,8 @@ namespace :brands do
           @IMAGE_URL = convertRelativeUrl(html_img.attribute("src").value)
         end
         
-        brand.logo = getPicture(@IMAGE_URL)
+        brand.logo = DbMotoPicture.new     
+        brand.logo.photo = getPicture(@IMAGE_URL)
         brand.save
         puts "Brand [" + (index + 1).to_s + "]: " + brand.name + " logo URL = " + @IMAGE_URL
           

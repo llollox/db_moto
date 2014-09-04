@@ -4,8 +4,12 @@ class Bike < ActiveRecord::Base
   # :torque, :brakes, :brake_measures, :wheel_measures, :anti_pollution_legislation, :weight,
   # :length, :seat_height, :fuel_capacity, :category, :brand_id, :model_id, :price, :stroke, :category_id
 
-  has_many :pictures, as: :picturable, dependent: :destroy
+  # has_many :pictures, as: :picturable, dependent: :destroy
+  # accepts_nested_attributes_for :pictures, allow_destroy:true, :reject_if => lambda { |a| a[:photo].blank? }
+
+  has_many :pictures, :class_name => "DbMotoPicture", as: :picturable, dependent: :destroy
   accepts_nested_attributes_for :pictures, allow_destroy:true, :reject_if => lambda { |a| a[:photo].blank? }
+
   belongs_to :brand
   belongs_to :model
   belongs_to :category

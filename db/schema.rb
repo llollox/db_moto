@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140822123510) do
+ActiveRecord::Schema.define(version: 20140902144651) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "bikes", force: true do |t|
     t.integer  "brand_id"
@@ -55,37 +58,32 @@ ActiveRecord::Schema.define(version: 20140822123510) do
     t.datetime "updated_at"
   end
 
-  create_table "models", force: true do |t|
-    t.string   "name"
-    t.integer  "brand_id"
-    t.string   "motoit_code"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "pictures", force: true do |t|
+  create_table "db_moto_pictures", force: true do |t|
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.integer  "picturable_id"
     t.string   "picturable_type"
-    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "user_sessions", force: true do |t|
+  create_table "dropbox_db_moto_pictures", force: true do |t|
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.integer  "picturable_id"
+    t.string   "picturable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "username"
-    t.string   "email"
-    t.string   "crypted_password"
-    t.string   "password_salt"
-    t.string   "persistence_token"
+  create_table "models", force: true do |t|
+    t.string   "name"
+    t.integer  "brand_id"
+    t.string   "motoit_code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
